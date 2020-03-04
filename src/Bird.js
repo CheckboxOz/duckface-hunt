@@ -53,13 +53,15 @@ class Bird {
     }, 250)
 
     // How long this bird stays on the screen
-    this.timeTillFlee = Math.floor(Math.random() * 6) + 40
+    this.timeTillFlee = Math.floor(Math.random() * 6) + 6
     this.timeTillFleeInterval = setInterval(() => {
       --this.timeTillFlee
       if (!this.timeTillFlee && !this.isDying) {
         this.flee()
       }
     }, 1000)
+
+    sound.quack.play()
   }
 
   /**
@@ -109,6 +111,7 @@ class Bird {
     this.speed.y = -8
     this.dir.y = 1
 
+    sound.laugh.play()
     // this.destroy()
   }
 
