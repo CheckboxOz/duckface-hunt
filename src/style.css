@@ -1,0 +1,22 @@
+button {
+  font-size: 42px;
+  padding: 20px;
+}
+
+#message {
+  font-size: 42px;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  padding: 20px;
+  position: relative;
+}
+
+#scene-image {
+  position: absolute;
+  bottom: 0;
+}
