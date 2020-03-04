@@ -1,3 +1,8 @@
+body {
+  font-size: 24px;
+  line-height: 36px;
+}
+
 button {
   font-size: 42px;
   padding: 20px;
@@ -13,6 +18,9 @@ button {
 
 .column {
   padding: 20px;
+}
+
+.relative {
   position: relative;
 }
 

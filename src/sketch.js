@@ -1,10 +1,13 @@
-function preload() {}
+handsfree = new Handsfree({ weboji: true })
 
-function setup() {
+window.preload = function() {}
+
+window.setup = function() {
   let canvas = createCanvas(1280, 769)
   canvas.parent('sketch-container')
+  console.log('setup')
 }
 
-function draw() {
+window.draw = function() {
   background('#3cbcfc')
 }

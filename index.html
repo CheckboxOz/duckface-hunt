@@ -11,14 +11,27 @@
   <body>
     <div class="columns">
       <div class="column">
-        <div id="sketch-container"></div>
-        <img id="scene-image" src="assets/scene.png" alt="" />
+        <div class="relative">
+          <div id="sketch-container"></div>
+          <img id="scene-image" src="assets/scene.png" alt="" />
+        </div>
       </div>
-      <div class="column"></div>
+      <div class="column">
+        <button class="handsfree-show-when-loading" disabled>loading...</button>
+        <button class="handsfree-show-when-stopped handsfree-hide-when-loading" onclick="handsfree.start()">
+          Start Webcam
+        </button>
+        <button class="handsfree-show-when-started" onclick="handsfree.stop()">Stop Webcam</button>
+        <ul>
+          <li>Start webcam</li>
+          <li>Move head to move red pointer</li>
+          <li>Shoot by smiling or smirking to either side</li>
+        </ul>
+      </div>
     </div>
 
-    <script src="src/sketch.js"></script>
     <script src="https://unpkg.com/handsfree@7.0.3/dist/handsfree.js"></script>
+    <script src="src/sketch.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.js"></script>
 
