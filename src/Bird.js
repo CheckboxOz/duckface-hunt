@@ -112,7 +112,10 @@ class Bird {
     this.dir.y = 1
 
     sound.laugh.play()
-    // this.destroy()
+
+    setTimeout(() => {
+      birds.push(new Bird())
+    }, 500 + Math.random() * 2500)
   }
 
   /**
@@ -124,8 +127,9 @@ class Bird {
     this.speed.y = 8
     this.dir.y = 1
 
-    console.log('die')
-    // this.destroy()
+    setTimeout(() => {
+      birds.push(new Bird())
+    }, 500 + Math.random() * 2500)
   }
 
   /**
@@ -134,6 +138,5 @@ class Bird {
   destroy() {
     clearInterval(this.timeTillFleeInterval)
     clearInterval(this.animInterval)
-    this.shouldDelete = true
   }
 }
