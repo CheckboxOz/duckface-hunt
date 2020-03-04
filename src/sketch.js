@@ -1,15 +1,19 @@
 let birds = []
+let spritesheet
 handsfree = new Handsfree({ weboji: true })
 
-window.preload = function() {}
+preload = function() {
+  spritesheet = loadImage('/assets/spritesheet.png')
+}
 
-window.setup = function() {
+setup = function() {
   let canvas = createCanvas(1280, 769)
   canvas.parent('sketch-container')
   birds.push(new Bird())
+  birds.push(new Bird())
 }
 
-window.draw = function() {
+draw = function() {
   background('#3cbcfc')
 
   birds.forEach(bird => {

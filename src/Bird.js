@@ -11,18 +11,39 @@ class Bird {
     }
     this.y = Math.floor(Math.random() * height)
 
+    // Random speeds
     this.speed = {
-      x: 8 + Math.random() * 4,
-      y: 8 + Math.random() * 4
+      x: 4 + Math.random() * 8,
+      y: 4 + Math.random() * 8
     }
+
+    // 1 for right, -1 for left
     this.dir = {
       x: 1,
       y: 1
     }
+
+    // Animations
+    this.image = [
+      // left
+      spritesheet.get(0, 0, this.width, this.height),
+      spritesheet.get(90, 0, this.width, this.height),
+      spritesheet.get(180, 0, this.width, this.height),
+
+      // right
+      spritesheet.get(270, 0, this.width, this.height),
+      spritesheet.get(360, 0, this.width, this.height),
+      spritesheet.get(450, 0, this.width, this.height)
+    ]
+    this.animFrame = 0
+    this.animInterval = setInterval(() => {
+      this.animFrame++
+    }, 250)
   }
 
   draw() {
-    rect(this.x, this.y, this.width, this.height)
+    this.animMod = this.dir.x > 0 ? 0 : 3
+    image(this.image[(this.animFrame % 3) + this.animMod], this.x, this.y)
   }
 
   update() {
@@ -43,5 +64,3 @@ class Bird {
     this.draw()
   }
 }
-
-window.Bird = Bird
